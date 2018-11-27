@@ -1,0 +1,29 @@
+﻿server:
+  port: 8000
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/mydada?serverTimezone=CTT&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+mybatis:
+  #扫描实体类
+  type-aliases-package: classpath:com/example/demo/pojo
+  #扫描mappeer
+ # mapper-locations: classpath:mapper/*.xml
+
+#分页的东西
+  pagehelper:
+    helper-dialect: mysql
+    reasonable: true
+    support-methods-arguments: true
+    params: count==countSql
+    page-size-zero: true
+
+
+
